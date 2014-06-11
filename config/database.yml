@@ -1,0 +1,26 @@
+development:
+  adapter: postgresql
+  database: nyborhood_dev
+  encoding: unicode
+  pool: 25
+  username:
+  password:
+  host: localhost
+
+test:
+  adapter: postgresql
+  database: nyborhood_test 
+  encoding: unicode
+  pool: 25
+  username:
+  password:
+  min_messages: WARNING
+  host: localhost
+
+production:
+  adapter: postgresql
+  database: nyborhood_prod
+  encoding: unicode
+  pool: 25
+  username: postgres
+  password: db1

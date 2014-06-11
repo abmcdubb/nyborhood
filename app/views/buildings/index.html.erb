@@ -1,0 +1,213 @@
+<% gif = ['https://i.imgur.com/q3e87zR.gif', 'https://i.imgur.com/oMA9SkO.gif','http://i.imgur.com/pJfr1.gif', 'http://s3-ec.buzzfed.com/static/enhanced/webdr03/2012/11/22/10/anigif_enhanced-buzz-30488-1353597521-3.gif', 'https://31.media.tumblr.com/tumblr_maxvp5u70b1qdlh1io1_500.gif', 'http://belieber.files.wordpress.com/2011/04/funny-animal-gif.gif?w=590'] %>      
+
+      <!-- Grid box Menu -->
+        <div class="row">
+          <div class="col-md-12">
+
+            <%#= render 'carousel' %>
+        <% if @building != nil %>
+
+        <% police_precinct = @building.police_precinct %>
+        <% if police_precinct.length < 3 %>
+           <% if police_precinct.length == 2 %>
+            <% police_precinct = '0' + police_precinct %>
+           <% else %>
+            <% police_precinct = '00' + police_precinct %>
+           <% end %>
+        <% end %>
+ 
+        <!-- Start Menu -->
+        <div class="row">
+          <div class="col-md-4">
+            <!-- First column Box -->
+            <div class="box">
+              <!-- Graph for details -->
+              <div class="medium-box br-black">
+                <div class="pad">
+                  <!-- Status Block -->
+                  <div class="status">
+                    <!-- Spark Line -->
+                    <div class="s-header-override s-header"><h3 class="h3-complaint-override">TOTAL COMPLAINTS: <%= @complaint_count%> </h3><br>
+                       <% if @complaint_count > 0 %>
+                       <h4 class="h4-complaint-override">MOST REPORTED COMPLAINTS:</h4></div>
+                       <% else %>
+                       <h6 >OUR SEARCH DIDN'T FIND ANY COMPLAINTS <br>FOR THIS BUILDING.  ENJOY THIS GIF INSTEAD:</h6></div>
+                       <% end %>  
+
+                    
+                    <div class="clearfix"></div>
+                    <!--  Status Item List -->
+                    <div class="counter">
+
+                      <ul >
+                        <% if @complaint_count == 0 %>
+                            <img src=<%= gif.sample %> class="animated_gif">
+                        <% else %>  
+                          <% @top_5_complaints.each do |complaint| %>
+
+                            <li class="body-line-height-override"><%= complaint['count'] %> <%= complaint['_id'].capitalize %> <%= 'complaint'.pluralize(complaint['count']) %> </li>
+                            <!-- Spark Line with element -->
+                          <% end %>
+                        <% end %>
+                      </ul>
+                      <div class="clearfix"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="small-box half-width br-blue pull-left box-link">
+                <div class="pad">
+                  <!-- Link to other page -->
+                  <a href="http://schools.nyc.gov/SchoolSearch/" target="_blank">
+                    <img src="assets/school-icon.png" class="img-responsive icon-resize" alt="" />
+                    <h5 class="override-small_box-h5">School District:
+                      <br><%= @building.school_district %>
+                    </h5>
+                  </a>
+                </div>
+              </div>
+              <div class="small-box half-width br-red pull-right box-link">
+                <div class="pad">
+                  <!-- Link to other page -->
+                  <a href="#" target="_blank">
+                    <img src="assets/community-icon.png" class="img-responsive icon-resize" alt="" />
+                    <h5 class="override-small_box-h5">Community Board:
+                      <br> <%= @building.community_district %>
+                    </h5>
+                  </a>
+                </div>
+              </div>
+              <div class="clearfix"></div>
+
+            </div>
+          </div>
+          <div class="col-md-4">
+            <!-- Second column Box -->
+
+
+            <div class="box">
+              <div class="medium-box weather weather-override-medium-box">
+                <div class="w-pad">
+                  <!-- Weather details block -->
+                  <!-- Current Weather Report -->
+                  <div class="w-today">
+                    <div>
+                      <!-- Image for weather -->
+                      <!-- <img src="assets/home_icon.png" class="img-responsive img-resize" alt="" /> -->
+                    </div>
+                    <h3><%= @building.address %><br><%= @building.borough %>, NY <%= @building.zip %></h3>
+                   
+                  </div>
+                  <!-- Next Day weather report -->
+                  
+
+
+                  <% if !@building.owner_name.blank? %>
+                    <div class="w-report w-report-override">
+                      <img src="assets/owner-icon.png" class="img-responsive address-box-image" alt="" /><span class="address-box-span">
+
+                      OWNED BY <%= @building.owner_name %></span>
+                      <div class="clearfix"></div>
+                    </div>
+                  <% end %>
+
+                   <% if @building.year_built %>
+                    <div class="w-report w-report-override">
+                      <img src="assets/built-icon.png" class="img-responsive address-box-image" alt="" /><span class="address-box-span">
+
+                      BUILT IN <%= @building.year_built %> </span>
+                      <div class="clearfix"></div>
+                    </div>
+                  <% end %>
+
+                  <% if @building.num_of_floors %>
+                    <div class="w-report w-report-override">
+                      <img src="assets/floors-icon.png" class="img-responsive address-box-image" alt="" /><span class="address-box-span">
+
+                      <%= @building.num_of_floors %> STORIES</span>
+                      <div class="clearfix"></div>
+                    </div>
+                  <% end %>
+
+                  <% if @building.num_of_residential_units || @building.num_of_total_units  %>
+                    <div class="w-report w-report-override">   
+                      <img src="assets/units-icon.png" class="img-responsive address-box-image" alt="" /><span class="address-box-span">
+                      <% if @building.num_of_residential_units && @building.num_of_total_units  %> 
+                        <%= @building.num_of_residential_units %> RESIDENCES OUT OF <%= @building.num_of_total_units  %> TOTAL UNITS.<br />
+                      <% elsif @building.num_of_residential_units %>
+                        <%= @building.num_of_residential_units  %> RESIDENTIAL UNITS<br />
+                      <% elsif @building.num_of_total_units %>
+                        <%= @building.num_of_total_units  %> TOTAL UNITS  
+                      <% end %> 
+                       <span> 
+                        <div class="clearfix"></div>
+                    </div>    
+                  <% end %>
+                  <!-- Next Day weather report -->
+                  <!-- <div class="w-report">
+                    <img src="assets/w1.png" class="img-responsive" alt="" /><span><strong>35&deg;C</strong> Sep 26, <span>Wind : 45 kmph, Humidity : 90&#37;</span></span>
+                    <div class="clearfix"></div>
+                  </div> -->
+                </div>
+              </div>
+
+
+              <!-- Divide into two column inside one column -->
+              <!-- Small size box width 50% -->
+              <div class="small-box half-width br-green pull-left box-link">
+               <div class="pad">
+                  <!-- Link to other page -->
+                  <a href="http://alishamcwilliams.com" target="_blank">
+                    <img src="assets/me-icon.png" class="img-responsive icon-resize" alt="" />
+                    <h5 class="override-small_box-h5">About Me</h5>
+                  </a>
+                </div>
+              </div>
+              <div class="small-box half-width br-orange pull-right box-link">
+                <div class="pad">
+                  <!-- Link to other page -->
+                   <a href="http://alishamcwilliams.com" target="_blank">
+                    <img src="assets/contact-icon.png" class="img-responsive icon-resize" alt="" />
+                    <h5 class="override-small_box-h5">Contact Me</h5>
+                  </a>
+                </div>
+              </div>
+              <div class="clearfix"></div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <!-- Third column Box -->
+            <div class="box">
+              <div class="medium-box br-grey">
+                <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" border-radius="10px" marginwidth="0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDg-VAs_FOMZJPdBeq8rV1-AJN1ctSjoCc&q=<%= @gmail_query %>"></iframe>
+              </div>  
+              <div class="small-box half-width br-pink pull-left box-link">
+                <div class="pad">
+                  <!-- Link to other page -->
+                  <a href="http://www.nyc.gov/html/nypd/html/precincts/precinct_<%= police_precinct%>.shtml" target="_blank">
+                    <img src="assets/police-icon.png" class="img-responsive icon-resize" alt="" />
+                    <h5 class="override-small_box-h5">Police Precinct: <%= police_precinct %></h5>
+                  </a>
+                </div>
+              </div>
+              <div class="small-box half-width br-purple pull-right box-link">
+                <div class="pad">
+                  <!-- Link to other page -->
+                  <a href="http://www.nyc.gov/html/fdny/html/home2.shtml" target="_blank">
+                    <img src="assets/firetruck-icon.png" class="img-responsive icon-resize" alt="" />
+                    <h5 class="override-small_box-h5">Fire Company: <%= @building.fire_company %></h5>
+                  </a>
+                </div>
+              </div>  
+              <div class="clearfix"></div>
+              <!-- Testimonial carousel -->
+                         
+            </div>
+          </div>
+        </div>
+        <% end %>
+        <!-- Grid box Menu -->
+        <!-- End -->
+        
+      </div>
+    </div>

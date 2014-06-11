@@ -1,0 +1,73 @@
+
+#grayedOutFull {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background: black; 
+  filter: progid:DXImageTransform.Microsoft.Alpha(opacity=85); 
+  opacity: .85; 
+  z-index: 13; 
+  display: none;
+}
+
+#weeblyLightbox {
+  position: absolute; 
+  width: 100%; 
+  top: 0px; 
+  left: 0px; 
+  z-index: 15;
+  display: none;
+}
+
+#weeblyLightboxInside {
+  width: 500px; 
+  margin: 30px auto; 
+  position: relative; 
+  background: white;
+}
+
+#weeblyLightboxBorderTL { 
+  position: absolute; 
+  top: 0px; 
+  left: 0px; 
+  width: 13px; 
+  height: 13px; 
+  overflow: hidden; 
+  background-image: url('/weebly/images/border_tl.gif')
+}
+
+#weeblyLightboxBorderTR { 
+  position: absolute; 
+  top: 0px; 
+  right: 0px; 
+  width: 13px; 
+  height: 13px; 
+  overflow: hidden; 
+  background-image: url('/weebly/images/border_tr.gif')
+}
+
+#weeblyLightboxBorderBL { 
+  position: absolute; 
+  bottom: 0px; 
+  left: 0px; 
+  width: 13px; 
+  height: 13px; 
+  overflow: hidden; 
+  background-image: url('/weebly/images/border_bl.gif')
+}
+
+#weeblyLightboxBorderBR { 
+  position: absolute; 
+  bottom: 0px; 
+  right: 0px; 
+  width: 13px; 
+  height: 13px; 
+  overflow: hidden; 
+  background-image: url('/weebly/images/border_br.gif')
+}
+
+#weeblyLightboxContent {
+  padding: 10px;
+}

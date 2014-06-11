@@ -1,0 +1,72 @@
+@import 'bootstrap';
+@import 'style';
+
+.img-resize {
+  height: 75px;
+}
+.w-margin-override {
+  margin-top: 0px !important;
+}
+.icon-resize {
+  display: inline-block;
+  height: 80px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+.s-header-override {
+  width: 360px !important;
+  margin-top: 0px !important;
+}
+
+.medium-box {
+  height: 360px !important;
+}
+
+.h3-complaint-override {
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+}
+
+.h4-complaint-override {
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+}
+
+.body-line-height-override {
+  line-height: 15px !important;
+  font-size: 15px !important;
+}
+
+.complaints-span-font-size-override {
+  font-size: 15px !important;
+  font-weight: bold !important;
+}
+
+.address-box-span {
+  font-size: 15px !important;
+  text-align: left !important;
+  display: block !important;
+}
+
+.w-report-override {
+  padding: 3px !important;
+}
+
+.override-small_box-h5 {
+  margin: 1px !important;
+  font-size: 15px !important;
+}
+
+.address-box-image {
+  max-width: 40px !important;
+  margin-right: 20px !important;
+  margin-left: 20px !important;
+}
+
+.weather-override-medium-box {
+  padding-left: 15px !important;
+  padding-right: 15px !important;
+}
+.animated_gif {
+  width: 250px;
+}

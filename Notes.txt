@@ -1,0 +1,37 @@
+parser.rb: clean up code:
+parser.rb: use arrays of constants to populate field data instead of long hashes
+parser.rb: figure our smarty streets
+parser.rb: check and see if you need requirement of chronic
+
+complaint.rb: add in validations
+complaint.rb: checked to see if copied over methods still work
+
+building.rb: geocoder, blah
+
+Complaint db: dedupe data
+Complaint db: attach building id to matching address records
+Complaint db: consider removing fields
+Complaint db: add indices
+
+Building db: clean up data to remove buildings without proper address
+Building db: LAT? LONG? WHY?
+Building db: consider removing fields
+Building db: FUTURE-- decide which descriptors of complaints are necessary, which should be 
+removed
+Building db: consider splitting house number from street address and street type
+Building db: add indicies
+
+for search functionality: st, st., street, ave, avenue, ave., blvd, boulevard, pl, pl., place, pkwy, parkway, road, rd, rd., turnpike, drive, dr, concourse, broadway 
+
+Building count ALL: 861904
+Building count without registered buildings: 834233
+
+# t = Parser.new("/Users/alishamcwilliams/Desktop/Development/Personal Projects/nyc_apartment_app/CSVs/311_Service_Requests_from_2010_to_Present.csv")
+# t = Parser.new("/Users/alishamcwilliams/Desktop/Development/Personal Projects/nyc_apartment_app/CSVs/buildings_update--2014-05-03/everything_without_A_footnote.csv")
+# t = Parser.new("/Users/alishamcwilliams/Desktop/Development/Personal Projects/nyc_apartment_app/CSVs/Buildings20140301/Building20140228.txt")
+# t = Parser.new("/Users/alishamcwilliams/Desktop/Development/Personal Projects/nyc_apartment_app/CSVs/nyc_pluto_13v2/MN.csv")  
+# Parser.new("https://data.cityofnewyork.us/api/views/erm2-nwe9/rows.json?accessType=DOWNLOAD")
+# t = Parser.new("db/311_Service_Requests_from_2010_to_Present.csv")
+
+-TESTS, WOMAN!-
+adding stuff

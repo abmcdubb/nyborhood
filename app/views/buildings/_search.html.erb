@@ -1,0 +1,18 @@
+<div class="col-md-4 col-sm-4">
+  <div class="search">
+    <%= form_tag("/buildings", method: "get") do %>
+    <%#= label_tag(:'building[address]', "Search by address:") %>
+      <div class="input-group">
+        <!-- Search box and button -->
+         <%= text_field_tag(:'building[address]', nil, placeholder: 'Enter Street Address Here', class: 'form-control') %>
+        <span class="input-group-btn">
+          <button class="btn btn-danger" type="submit"><i class="fa fa-search"></i></button>
+        </span>
+
+      </div>
+    <%end%>
+  </div>
+</div>
+
+                  
+                    

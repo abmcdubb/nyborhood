@@ -1,0 +1,8 @@
+.inner-product .carousel .carousel-control{
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+}
+
+.inner-product .carousel .carousel-control .icon-prev,
+.inner-product .carousel .carousel-control .icon-next{
+	line-height: 45px !important;
+}

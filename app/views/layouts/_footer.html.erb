@@ -1,0 +1,64 @@
+<!-- Footer -->
+      <div class="footer">
+        <div class="container">
+          <!-- Footer copy right  -->
+          <div class="copy-right">
+            <span> &copy; Copyright 2014 - <a href="http://www.alishamcwilliams.com/">Alisha B. McWilliams</a></span>
+          </div>
+        </div>
+      </div>
+    <!-- Footer End -->
+    
+    
+  
+    <script type="text/javascript">
+      /* plot js */
+        
+         $(function() {
+            var d1 = [[0, 1], [1, 2], [2, 3], [3, 4],[4, 5], [5, 6], [6, 5], [7, 6],[8, 7], [9, 6], [10, 7], [11, 8],[12, 9], [13, 9], [14, 9], [15, 8],[16, 8], [17, 9], [18, 10], [19, 10],[20, 9], [21, 8], [22, 7], [23, 8],[24, 9], [25, 8], [26, 6], [27, 4],[28, 2]];
+      var options = {
+               series: {
+                  lines: {
+                     show: true, fill: true, fillColor: "rgba(113,214,232,0.5)", lineWidth:1
+                  },
+                  points: {
+                     show: true, fill: true, fillColor: "rgba(113,214,232,0.5)"
+                  }
+               },
+               colors :["rgba(255,255,255,1)"],
+               grid: {
+                  color: "#fff", borderWidth: 0, minBorderMargin: 5
+               },
+               xaxis: {
+                  font: {
+                        size: 10,
+                        color: "rgba(255,255,255,0.8)"
+                    }
+               },
+               yaxis: {
+                  font: {
+                        size: 10,
+                        color: "rgba(255,255,255,0.8)"
+                    }
+               }
+            };
+      
+            $.plot(".plot-chart", [ d1 ], options);
+         });
+     
+     /* Spark Line bar js */
+
+
+    $(".sparkline").sparkline( [20,23,19,20,19,17,16,20,18,17,19,23,19,22] , {
+      type: 'bar',
+      height: '35',
+      barColor: 'rgba(255, 255, 255, 1)'
+    }); 
+     
+    $(".list-bar").sparkline( 'html' , {
+      type: 'bar',
+      height: '16',
+      barColor: 'white'
+    }); 
+         
+    </script>
