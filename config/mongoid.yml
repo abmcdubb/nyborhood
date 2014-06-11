@@ -84,8 +84,6 @@ production:
       uri: <%= ENV['MONGO_LINK'] %>
       
       options:
-        skip_version_check: true
-        safe: true
         
         # The default consistency is :eventual, which reads from
         #secondaries when possible.
