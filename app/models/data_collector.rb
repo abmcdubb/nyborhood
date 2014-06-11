@@ -1,7 +1,7 @@
-require 'mongo'
-require 'csv'
-require 'pry'
-require 'chronic'
+# require 'mongo'
+# require 'csv'
+# require 'pry'
+# require 'chronic'
 
 class DataCollector
 
