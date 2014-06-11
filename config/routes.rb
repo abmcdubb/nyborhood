@@ -1,7 +1,7 @@
 Nyborhood::Application.routes.draw do
   # resources :buildings
   get '/buildings' => 'buildings#index'
-  # root ‘/buildings#index’
+  root 'buildings#index'
   # get ‘/auctions’ => ‘auctions#index’
   # get ‘/auctions/new’ => ‘auctions#new’, as: ‘new_auctions’
   # post ‘/auctions’ => ‘auctions#create’
