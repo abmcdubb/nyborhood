@@ -77,8 +77,9 @@ test:
 production:
   sessions:
     default:
+      uri: 'mongodb://admin:<%= ENV["MONGO_LAB_PW"] %>@ds049969-a0.mongolab.com:49969/nyborhood1'
       hosts:
-        mongodb://admin:<%= ENV["MONGO_LAB_PW"] %>-a0.mongolab.com:49969/nyborhood1
+        - ds049969-a0.mongolab.com:49969
       username: admin
       password: <%= ENV["MONGO_LAB_PW"] %>
       database: nyborhood1
