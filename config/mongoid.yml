@@ -81,7 +81,7 @@ production:
       # replica set connection setup.
       # Use environment variables or a config file to keep your
       # credentials safe.
-      uri: <%= ENV["MONGO_LINK"] %>
+      uri: ENV["MONGO_LINK"]
       
       options:
         
