@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<% if flash[:notice] %>
+  <div class="notice alert alert-danger alert-radius-override"><%= flash[:notice] %></div>
+<% end %> 
 
 <html>
 <head>
@@ -8,7 +11,10 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<%= render '/layouts/navbar' %>  
+
+<%= render '/layouts/navbar' %> 
+
+
 
 <%= yield %>
 

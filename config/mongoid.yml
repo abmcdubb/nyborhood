@@ -78,10 +78,10 @@ production:
   sessions:
     default:
       hosts:
-        - ds041168.mongolab.com:41168
+        - ds049969-a0.mongolab.com:49969
       username: admin
       password: <%= ENV["MONGO_LAB_PW"] %>
-      database: nyborhood
+      database: nyborhood1
       options:
         skip_version_check: true
         safe: true
