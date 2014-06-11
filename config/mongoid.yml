@@ -78,7 +78,7 @@ production:
   sessions:
     default:
       hosts:
-        - ds049969-a0.mongolab.com:49969
+        mongodb://admin:<%= ENV["MONGO_LAB_PW"] %>-a0.mongolab.com:49969/nyborhood1
       username: admin
       password: <%= ENV["MONGO_LAB_PW"] %>
       database: nyborhood1
